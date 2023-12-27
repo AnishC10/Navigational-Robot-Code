@@ -65,10 +65,10 @@ void loop() {
           int leftDist;  // Get the distance on the left
           int rightDist;  // Get the distance on the right
           name_servo.write(-90);
-          delay(1000)
+          delay(1000);
           leftDist = dist;
-          name_servo.write(180)
-          delay(1000)
+          name_servo.write(180);
+          delay(1000);
           rightDist = dist;
           if (leftDist > rightDist) {
             turnLeft();
