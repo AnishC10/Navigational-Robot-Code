@@ -60,11 +60,16 @@ void loop() {
         lcd.clear();  // Clear the LCD screen
         lcd.print("Distance: " + (dist));
 
-        if (dist < 5) {
+        if (dist < 15) {
           // Your sensor code here
           int leftDist;  // Get the distance on the left
           int rightDist;  // Get the distance on the right
-
+          name_servo.write(-90);
+          delay(1000)
+          leftDist = dist;
+          name_servo.write(180)
+          delay(1000)
+          rightDist = dist;
           if (leftDist > rightDist) {
             turnLeft();
           } else {
