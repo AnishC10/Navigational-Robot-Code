@@ -58,11 +58,16 @@ void loop() {
 Serial.println(dist);
 
           if(dist < 30) {
-            motor1.run(FORWARD);
-            motor2.run(BACKWARD);
-            motor3.run(BACKWARD);
-            motor4.run(FORWARD);
-           
+            name_servo.write(180);
+            int leftDist;
+            int rightDist;
+            rightDist = dist;
+            if(rightDist < 15){
+              motor1.run(FORWARD);
+              motor2.run(BACKWARD);
+              motor3.run(BACKWARD);
+              motor4.run(FORWARD);
+            }
            //  delay(100);
           } else {
             motor1.run(FORWARD);
